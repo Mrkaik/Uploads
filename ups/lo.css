@@ -1,0 +1,159 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #212121;
+    color: #fff;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form {
+    width: 300px;
+    padding: 64px 15px 24px;
+    background: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+.control {
+    margin: 0 0 24px;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+    font-size: 16px;
+    z-index: 2;
+    position: relative;
+}
+
+input:focus {
+    outline: none;
+}
+
+.btn {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn .text {
+    position: relative;
+    z-index: 2;
+}
+
+.bg-top,
+.bg-right,
+.bg {
+    position: absolute;
+    transition: background 0.2s ease-in-out;
+}
+
+.bg-top {
+    height: 10px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(52,9,121,1) 37%, rgba(0,212,255,1) 94%);
+    bottom: 100%;
+    left: 5px;
+    right: -5px;
+    transform: skew(-45deg, 0);
+}
+
+.bg-right {
+    background: rgba(0,212,255,1);
+    top: -5px;
+    z-index: 0;
+    bottom: 5px;
+    width: 10px;
+    left: 100%;
+    transform: skew(0, -45deg);
+}
+
+.bg {
+    background: rgba(0,212,255,1);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.bg-inner {
+    background: #212121;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+}
+
+.block-cube {
+    position: relative;
+}
+
+.block-cube-hover:focus .bg,
+.block-cube-hover:hover .bg {
+    .bg-inner {
+        top: 100%;
+    }
+}
+
+.block-input input:focus ~ .bg-right .bg-inner,
+.block-input input:focus ~ .bg-top .bg-inner,
+.block-input input:focus ~ .bg .bg-inner {
+    top: 100%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.error {
+    color: #ff4d4d;
+    margin-top: 10px;
+}
+
+.credits {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 15px 15px;
+    width: 100%;
+    z-index: 111;
+    text-align: center;
+    color: #fff;
+    font-size: 11px;
+}
+
+.credits a {
+    opacity: 0.6;
+    color: #fff;
+    text-decoration: none;
+}
+
+.credits a:hover {
+    opacity: 1;
+}
